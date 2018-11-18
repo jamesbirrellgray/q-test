@@ -33,5 +33,4 @@ function mapStateToProps(state) {
     posts
   }
 }
- 
 export default connect(mapStateToProps)(App)
