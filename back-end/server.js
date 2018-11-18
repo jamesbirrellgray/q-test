@@ -22,4 +22,12 @@ router.get('/', function(req, res) {
 // prefix 
 app.use('/api/v1', router);
 
+router.route('/posts')
+  .get(function(req, res) {
+    
+  })
+  .post(function(req, res) {
+
+  });
+  
 app.listen(port);
