@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node front-end/index.js",
     "pack": "webpack --config webpack.config.js",
-    "babel": "babel front-end/src -d views",
+    "babel": "babel ./front-end/src -d ./front-end/views",
     "build": "npm run pack && npm run babel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
