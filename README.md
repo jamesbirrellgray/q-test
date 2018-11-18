@@ -13,7 +13,8 @@ With the information supplied about the role and as the excersize includes extra
 
 I've chosen the above structure to represent a "real world" scenario and separation of concerns e.g. Front End & Back End temas.
 
-I've also chosen to include SSR (Server Side Rendering) as the task is a CMS and therefore I would expect would need good SEO capabilities.
+I've also chosen to include SSR (Server Side Rendering) as the task is a CMS and therefore I would expect would need good SEO capabilities as well as other bennefits of better screen reader (accessability) capabilities and not ignoring users with JS turned off :-).
+
 
 
 

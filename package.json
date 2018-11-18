@@ -14,14 +14,17 @@
   },
   "homepage": "https://github.com/jamesbirrellgray/q-test#readme",
   "scripts": {
-    "start": "node front-end/index.js",
-    "pack": "webpack --config webpack.config.js",
-    "babel": "babel ./front-end/src -d ./front-end/views",
-    "build": "npm run pack && npm run babel",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fe-start": "node front-end/index.js",
+    "fe-pack": "webpack --config webpack.config.js",
+    "fe-babel": "babel ./front-end/src -d ./front-end/views",
+    "fe-build": "npm run fe-pack && npm run fe-babel",
+    "fe-test": "echo \"Error: no test specified\" && exit 1",
+    "ga-start": "node graph-api/server.js"
   },
   "dependencies": {
     "express": "^4.16.3",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
@@ -34,6 +37,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "concurrently": "^4.0.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
