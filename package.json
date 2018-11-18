@@ -19,7 +19,7 @@
     "fe-babel": "babel ./front-end/src -d ./front-end/views",
     "fe-build": "npm run fe-pack && npm run fe-babel",
     "fe-test": "echo \"Error: no test specified\" && exit 1",
-    "ga-start": "node graph-api/server.js",
+    "ga-start": "node graph-api/index.js",
     "be-start": "node back-end/server.js"
   },
   "dependencies": {
