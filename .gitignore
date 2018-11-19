@@ -64,3 +64,6 @@ typings/
 front-end/views
 front-end/assets/bundle.js
 front-end/assets/client.js
+
+# Back end ignores
+back-end/dist

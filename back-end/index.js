@@ -18,6 +18,7 @@ var router = express.Router();
 // test route
 router.get('/', function(req, res) {
   res.json({ message: 'Welcome to the q-test api!' });   
+
 });
 
 // prefix 
@@ -30,5 +31,4 @@ router.route('/posts')
   .post(function(req, res) {
     // todo prettyfy the json but maybe not! jsonfile.writeFileSync(db, req.body);
   });
-
 app.listen(port);
