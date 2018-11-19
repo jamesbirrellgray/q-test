@@ -21,7 +21,7 @@
     "fe-build": "npm run fe-pack && npm run fe-babel",
     "fe-test": "echo \"Error: no test specified\" && exit 1",
     "ga-build": "babel ./graph-api/src -d ./graph-api/dist",
-    "ga-start": "node graph-api/dist/index.js",
+    "ga-start": "concurrently -K \"ga-build\" \"nodemon --watch graph-api/src graph-api/dist/index.js\"",
     "be-start": "nodemon --watch back-end/index.js back-end/index.js"
   },
   "dependencies": {

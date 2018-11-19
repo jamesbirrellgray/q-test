@@ -16,7 +16,7 @@ module.exports = function render(initialState) {
        <App />
     </Provider>
   );
-
+  
   // Get a copy of store data to create the same store on client side 
   const preloadedState = store.getState()
 
