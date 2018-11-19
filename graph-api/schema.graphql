@@ -1,0 +1,24 @@
+type HomePage {
+  heading: String
+  subheading: String
+  heroImageUrl: Url
+}
+
+type Faq {
+  id: ID
+  title: String
+  body: String
+}
+
+type Post {
+  title: String
+}
+
+scalar Url
+
+type Query {
+  HomePage: HomePage
+  FaqsPage: [Faq]
+  Posts: [Post]
+}
+
