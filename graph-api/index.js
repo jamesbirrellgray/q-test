@@ -9,7 +9,6 @@ const schemaFile = path.join(__dirname, 'schema.graphql');
 const typeDefs = fs.readFileSync(schemaFile, 'utf8');
 
 // lets connect up the backend
-
 const backEndEndpoint = "http://localhost:5000/api/v1";
 
 const resolvers = {
@@ -18,6 +17,11 @@ const resolvers = {
       return fetch(`${backEndEndpoint}/posts`)
       .then(res => res.json())
       .then(json => json.faqs);
+    },
+    HomePage: () => {
+      return fetch(`${backEndEndpoint}/posts`)
+      .then(res => res.json())
+      .then(json => json.homepage);
     },
   },
 };
