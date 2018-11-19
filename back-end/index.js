@@ -39,6 +39,7 @@ router.route('/posts')
     res.status(200).send(jsonfile.readFileSync(db));
   })
   .post(function(req, res) {
+    console.log(req.body);
     // todo prettyfy the json but maybe not! jsonfile.writeFileSync(db, req.body);
   });
 app.listen(port);

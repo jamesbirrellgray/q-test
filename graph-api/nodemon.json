@@ -1,0 +1,7 @@
+{
+  "delay": "2500",
+  "events": {
+      "restart": "npm run ga-build",
+      "start": "npm run ga-build"
+    }
+ }

@@ -2,8 +2,7 @@ const express = require('express'),
           app = express(),
      template = require('./views/template')
          path = require('path');
-
-
+         
 // Serving static files
 app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
 app.use('/media', express.static(path.resolve(__dirname, 'media')));
@@ -40,7 +39,6 @@ app.get('/client', (req, res) => {
 });
 
 // tiny trick to stop server during local development
-
 app.get('/exit', (req, res) => {
   if(process.env.PORT) {
     res.send("Sorry, the server denies your request")
@@ -48,5 +46,4 @@ app.get('/exit', (req, res) => {
     res.send("shutting down")
     process.exit(0)
   }
-
 });

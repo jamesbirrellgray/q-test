@@ -21,7 +21,7 @@
     "fe-build": "npm run fe-pack && npm run fe-babel",
     "fe-test": "echo \"Error: no test specified\" && exit 1",
     "ga-build": "babel ./graph-api/src -d ./graph-api/dist",
-    "ga-start": "concurrently -K \"ga-build\" \"nodemon --watch graph-api/src graph-api/dist/index.js\"",
+    "ga-start": "nodemon --config graph-api/nodemon.json --watch graph-api/src graph-api/dist/index.js",
     "be-start": "nodemon --watch back-end/index.js back-end/index.js"
   },
   "dependencies": {
@@ -51,7 +51,6 @@
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "concurrently": "^4.0.1",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.18.6",

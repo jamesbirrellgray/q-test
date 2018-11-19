@@ -1,13 +1,16 @@
 import Base from '../base';
 
 const FaqsPage = `
-  extend type Query {
-    FaqsPage: [Faq]
-  }
   type Faq {
     id: ID
     title: String
     body: String
+  }
+  extend type Query {
+    FaqsPage: [Faq]
+  }
+  extend type Mutation {
+    NewFaq(id: ID, title: String, body: String):Faq
   }
 `;
 
