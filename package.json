@@ -25,6 +25,7 @@
     "be-start": "nodemon --watch back-end/index.js back-end/index.js"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^0.2.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-graphql": "^0.7.1",

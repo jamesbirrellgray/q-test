@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from 'graphql-tools';
 import fetch from 'node-fetch';
-import Base from './base';
+import Base from './Base';
 import FaqsPage from './faqsPage/schema';
 import HomePage from './homePage/schema';
 
@@ -10,18 +10,18 @@ const backEndEndpoint = "http://localhost:5000/api/v1";
 const resolvers = {
   Query: {
     FaqsPage: (obj, args, context, info) => {
-      return context = fetch(`${backEndEndpoint}/posts`)
-      .then(res => res.json())
-      .then(json => json.faqs.map((f, i) => ({ id: i+1, title: f.title, body: f.body }))); // There must be a better way todo this ... I will read up
+      const { CmsPosts } = context.services
+      return CmsPosts.getPosts()
+      .then(posts => posts.faqs.map((f, i) => ({ id: i+1, title: f.title, body: f.body })))
     },
-    HomePage: () => {
-      return fetch(`${backEndEndpoint}/posts`)
-      .then(res => res.json())
-      .then(json => json.homepage);
+    HomePage: (obj, args, context, info) => {
+      const { CmsPosts } = context.services
+      return CmsPosts.getPosts()
+      .then(posts => posts.homepage);
     },
   },
   Mutation: {
-    NewFaq: (_, args) => {
+    NewFaq: (obj, args, context, info) => {
       const faq = {
         id: `${idCount++}`,
         title: args.title,

@@ -1,5 +1,3 @@
-import Base from '../base';
-
 const HomePage = `
   extend type Query {
     HomePage: HomePage
@@ -11,4 +9,4 @@ const HomePage = `
   }
 `;
 
-export default () => [HomePage, Base];
+export default () => [HomePage];

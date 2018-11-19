@@ -1,10 +1,11 @@
-import Base from '../base';
-
 const FaqsPage = `
   type Faq {
     id: ID
     title: String
     body: String
+  }
+  type FaqsPage {
+    posts: String
   }
   extend type Query {
     FaqsPage: [Faq]
@@ -14,4 +15,4 @@ const FaqsPage = `
   }
 `;
 
-export default () => [FaqsPage, Base];
+export default () => [FaqsPage];
