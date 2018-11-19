@@ -72,3 +72,4 @@ graph-api/dist
 
 # Back end ignores
 back-end/dist
+back-end/db/db.json
