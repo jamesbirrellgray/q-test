@@ -12,7 +12,7 @@ app.disable('x-powered-by');
 // start the server
 app.listen(process.env.PORT || 3000);
 
-// our apps data model
+// our apps data model lets start here
 const data = require('./assets/data.json');
 
 let initialState = {
