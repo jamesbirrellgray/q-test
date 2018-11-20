@@ -35,7 +35,6 @@
     "graphql-tools": "^4.0.3",
     "jsonfile": "^5.0.0",
     "minimist": "^1.2.0",
-    "node-fetch": "^2.3.0",
     "parse-json": "^4.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
