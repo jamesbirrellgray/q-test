@@ -1,4 +1,4 @@
-import { makeExecutableSchema } from 'graphql-tools';
+import { makeExecutableSchema } from 'graphql-tools'
 import { default as resolvers } from './Resolvers'
 import typeDefs from './TypeDefs'
 
