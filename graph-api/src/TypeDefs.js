@@ -8,6 +8,10 @@ type Query {
 type Mutation {
     dummy: Boolean
 }
+type Directive {
+    dummy: Boolean
+}
 scalar Url
-`
-export default () => [Base, FaqsPage, HomePage];
+`;
+
+export const typeDefs = [Base, FaqsPage, HomePage];

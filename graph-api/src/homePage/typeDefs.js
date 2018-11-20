@@ -8,5 +8,4 @@ const HomePage = `
     heroImageUrl: Url
   }
 `;
-
 export default () => [HomePage];

@@ -22,6 +22,7 @@ export default class Context {
     }
   }
 
+  
   /* ! Resolvers should reference explicit properties on `context`
   // ! instead of relying on `req` directly.
   get ip() {

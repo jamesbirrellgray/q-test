@@ -1,4 +1,18 @@
-import faqsPageResolvers  from "./faqsPage/resolvers"
-import homePageResolvers  from "./homePage/resolvers"
+import {
+  Query as FaqsPage,
+  Mutation as UpdateFaq,
+} from "./faqsPage/resolvers";
 
-export default () => [faqsPageResolvers, homePageResolvers]
+import {
+   Query as HomePage,
+} from "./homePage/resolvers"
+
+export default {
+    Query: {
+        ...FaqsPage,
+        ...HomePage,
+    },
+    Mutation: {
+        ...UpdateFaq,
+    },
+};

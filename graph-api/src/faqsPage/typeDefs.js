@@ -1,8 +1,8 @@
 const FaqsPage = `
   type Faq {
     id: ID
-    title: String!
-    body: String!
+    title: String
+    body: String
   }
   extend type Query {
     FaqsPage: [Faq]
@@ -11,5 +11,4 @@ const FaqsPage = `
     UpdateFaq(id: ID, title: String, body: String):Faq
   }
 `;
-
 export default () => [FaqsPage];
