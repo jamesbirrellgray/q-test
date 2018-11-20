@@ -8,8 +8,7 @@ const express = require('express'),
       argv = require('minimist')(process.argv.slice(2)),
       app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ type: 'application/*+json' }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Set up the DB and seed the data (for tests) if the seed argument is passes to "npm run be-start" e.g "be-start seed"
@@ -39,7 +38,7 @@ router.route('/posts')
     res.status(200).send(jsonfile.readFileSync(db));
   })
   .post(function(req, res) {
-    console.log(req.body);
-    // todo prettyfy the json but maybe not! jsonfile.writeFileSync(db, req.body);
+    jsonfile.writeFileSync(db, req.body);
+    res.status(200).send(jsonfile.readFileSync(db));
   });
 app.listen(port);
