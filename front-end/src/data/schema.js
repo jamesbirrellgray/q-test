@@ -4,19 +4,19 @@ import { printSchema } from 'graphql';
 import { makeExecutableSchema } from 'graphql-tools';
 
 /* Type Defs */
-import FaqsPageTypes from './faqsPage/typeDefs';
-import HomePageTypes from './homePage/typeDefs';
+import FaqsPageTypes from '../faqsPage/typeDefs';
+import HomePageTypes from '../homePage/typeDefs';
 import BaseTypes from "./baseTypeDefs";
 
 /* Resolvers */
 import {
   Query as FaqsPageQueries,
   Mutation as FaqsPageMutations,
-} from "./faqsPage/resolvers";
+} from "../faqsPage/resolvers";
 
 import {
    Query as HomePageQueries,
-} from "./homePage/resolvers";
+} from "../homePage/resolvers";
 
 /* Relay Node Resolver */
 const NodeResolver = {

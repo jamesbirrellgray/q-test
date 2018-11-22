@@ -20,7 +20,7 @@ if(argv._.length === 0 && fileExists.sync(db) === false) {
   jsonfile.writeFileSync(db, jsonfile.readFileSync(seedData));
 }
 // Set port
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 4000;
 
 // set up router
 var router = express.Router();  

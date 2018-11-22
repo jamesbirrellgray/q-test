@@ -1,7 +1,7 @@
 import express from "express"
 import graphql from "express-graphql"
-import Context from "./context"
-import schema from './schema'
+import Context from "./data/context"
+import schema from './data/schema'
 
 export default express()
   .set("trust proxy", true)

@@ -5,10 +5,10 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const config = {
   entry: {
-    server: './graph-api/src/index.js'
+    server: './front-end/index.js'
   },
   output: {
-    path: path.join(__dirname, '/graph-api/dist'),
+    path: path.join(__dirname, '/front-end/dist'),
     publicPath: '/',
     filename: '[name].js'
   },
@@ -35,7 +35,7 @@ const config = {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  config.plugins.push(new WebpackShellPlugin({onBuildEnd: ['nodemon ./graph-api/dist/server.js --watch dist/**']}));
+  config.plugins.push(new WebpackShellPlugin({onBuildEnd: ['nodemon ./front-end/dist/server.js --watch dist/**']}));
 }
 
 module.exports = config;

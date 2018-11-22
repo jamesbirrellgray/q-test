@@ -6,8 +6,7 @@ With the information supplied about the role and as the excersize includes extra
 
 * Front End  (localhost:3000)
     * React (With SSR, Relay)
-* Graph API (localhost:4000)
-    * GraphQl API 
+    * GraphQl API    
 * Back End (localhost:5000)
     * Node/Express
     * Data (json mocks)
