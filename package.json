@@ -14,16 +14,13 @@
   },
   "homepage": "https://github.com/jamesbirrellgray/q-test#readme",
   "scripts": {
-    "start": "concurrently -k \"npm:ga-start\" \"npm:be-start\"",
-    "start:dev": "concurrently -k \"rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js && node ./graph-api/dist/server.js\" \"npm:be-start\"",
+    "start":"concurrently -k \"webpack --watch --mode development --config webpack.graph-api.config.js\" \"npm:be-start\"",
     "fe-start": "node front-end/index.js",
     "fe-pack": "webpack --config webpack.config.js",
     "fe-babel": "babel ./front-end/src -d ./front-end/views",
     "fe-build": "npm run fe-pack && npm run fe-babel",
     "fe-test": "echo \"Error: no test specified\" && exit 1",
-    "ga-updateSchema": "babel-node ./dist/scripts/updateSchema.js",
-    "ga-start": "webpack --config webpack.config.js --mode=development --graph",
-    "be-start": "nodemon --watch back-end/index.js back-end/index.js"
+    "be-start": "nodemon back-end/index.js"
   },
   "dependencies": {
     "apollo-datasource-rest": "^0.2.0",
@@ -75,6 +72,7 @@
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.10",
     "webpack-hot-middleware": "^2.24.3",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }
