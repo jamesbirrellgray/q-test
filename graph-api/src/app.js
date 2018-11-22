@@ -1,7 +1,6 @@
 import express from "express"
 import graphql from "express-graphql"
-
-import Context from "./Context"
+import Context from "./context"
 import schema from './schema'
 
 export default express()
@@ -16,7 +15,7 @@ export default express()
         context,
         graphiql: true,
         pretty: true,
-        schema,
+        schema: schema,
       }
     })
   )

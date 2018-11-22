@@ -1,4 +1,4 @@
-const HomePage = `
+const HomePageTypes = `
   extend type Query {
     HomePage: HomePage
   }
@@ -8,4 +8,4 @@ const HomePage = `
     heroImageUrl: Url
   }
 `;
-export default () => [HomePage];
+export default () => [HomePageTypes];

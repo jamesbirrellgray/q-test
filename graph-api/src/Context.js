@@ -13,7 +13,7 @@ export default class Context {
       if (service.initialize) {
         service.initialize({
           cache,
-          // ! This allows services to reference each other 💪
+          // ! This allows services to reference each other
           context: this,
         })
       }
@@ -21,11 +21,4 @@ export default class Context {
       this.services[name] = service
     }
   }
-
-  
-  /* ! Resolvers should reference explicit properties on `context`
-  // ! instead of relying on `req` directly.
-  get ip() {
-    return this.req.ip
-  } */
 }

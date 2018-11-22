@@ -1,13 +1,23 @@
 export const Query = {
-  FaqsPage: (obj, args, context, info) => {
+  Faqs: (obj, args, context, info) => {
     const { CmsPosts } = context.services
     return CmsPosts.getPosts()
     // Add id's to make working with Faq's easier
     .then(posts => posts.faqs.map((f, i) => ({ id: i+1, title: f.title, body: f.body })))
-  }
+  },
+  Faq: (obj, args, context, info) => {
+    const { CmsPosts } = context.services
+    return CmsPosts.getPosts()
+    // Add id's to make working with Faq's easier
+    .then(posts => {
+      // I should make the add id to faqs a function
+      let faqs = posts.faqs.map((f, i) => ({ id: i+1, title: f.title, body: f.body }))
+      return faqs[faqs.findIndex(f => f.id == args.id)]
+    })
+  },
 }
-export const Mutation ={
-  UpdateFaq: (obj, args, context, info) => {
+export const Mutation = {
+  CreateFaq: (obj, args, context, info) => {
     const faq = {
       id: args.id,
       title: args.title,
