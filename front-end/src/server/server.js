@@ -1,7 +1,6 @@
 import express from "express"
 import graphql from "express-graphql"
-import Context from "./data/context"
-import schema from './data/schema'
+import { schema } from '../data/schema'
 
 export default express()
   .set("trust proxy", true)
@@ -9,10 +8,7 @@ export default express()
   .use(
     "/graphql",
     graphql((req, res) => {
-      const cache = undefined
-      const context = new Context({ cache, req })
       return {
-        context,
         graphiql: true,
         pretty: true,
         schema: schema,

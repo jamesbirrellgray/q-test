@@ -15,11 +15,7 @@
   "homepage": "https://github.com/jamesbirrellgray/q-test#readme",
   "scripts": {
     "start": "concurrently -k \"webpack --watch --mode development --config webpack.graph-api.config.js\" \"npm:be-start\"",
-    "fe-start": "node front-end/index.js",
-    "fe-pack": "webpack --config webpack.config.js",
-    "fe-babel": "babel ./front-end/src -d ./front-end/views",
-    "fe-build": "npm run fe-pack && npm run fe-babel",
-    "fe-test": "echo \"Error: no test specified\" && exit 1",
+    "fe-build-schema": "rm -f ./data/graphql.schema && node ./front-end/src/scripts/build-schema.js",
     "be-start": "nodemon --watch back-end/index.js back-end/index.js"
   },
   "dependencies": {
@@ -35,6 +31,7 @@
     "graphql-tools": "^4.0.3",
     "jsonfile": "^5.0.0",
     "minimist": "^1.2.0",
+    "node-fetch": "^2.3.0",
     "parse-json": "^4.0.0",
     "prettier": "^1.15.2",
     "prop-types": "^15.6.2",

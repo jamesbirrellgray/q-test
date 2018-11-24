@@ -1,16 +1,14 @@
-import { RESTDataSource } from "apollo-datasource-rest"
+import fetch from 'node-fetch';
 
-// A simple service to update the back end posts API
-export default class CmsPosts extends RESTDataSource {
-  constructor() {
-    super()
-    this.baseURL = "http://localhost:4000/api/v1/"
-  }
-  async getPosts() {
-    const posts = await this.get("posts")
-    return posts
-  }
-  async updatePosts(posts) {
-    return this.post("posts", posts)
-  }
+const baseUrl = "http://localhost:5000/api/v1/";
+
+export function  getPosts() {
+  return fetch(baseUrl+'posts').then(res => res.json());
+}
+export function updatePosts(posts) {
+  return fetch(baseUrl+'posts', { 
+    method: 'post', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(posts)
+  }).then(res => res.json());
 }
