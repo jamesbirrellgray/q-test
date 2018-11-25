@@ -15,7 +15,7 @@
   "homepage": "https://github.com/jamesbirrellgray/q-test#readme",
   "scripts": {
     "start": "concurrently -k \"webpack --watch --mode development --config webpack.graph-api.config.js\" \"npm:be-start\"",
-    "fe-build-schema": "rm -f ./data/graphql.schema && node ./front-end/src/scripts/build-schema.js",
+    "relay": "relay-compiler --src ./front-end/** --schema ./front-end/dist/schema.graphql",
     "be-start": "nodemon --watch back-end/index.js back-end/index.js"
   },
   "dependencies": {
